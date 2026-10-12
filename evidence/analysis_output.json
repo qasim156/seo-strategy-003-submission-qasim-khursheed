@@ -1,0 +1,296 @@
+{
+  "fixture_sha256": "fa691abc31b14093230657d17674ab0120449c54d20cef54bfe73686fe9b99c6",
+  "rows": 18,
+  "sample_traffic_now": 36090,
+  "sample_traffic_12mo_ago": 71800,
+  "sample_loss": -35710,
+  "sample_change_pct": -49.7,
+  "brief_site_change_pct": -39.3,
+  "sample_share_of_site_traffic_now_pct": 42.5,
+  "sample_share_of_site_traffic_then_pct": 51.3,
+  "non_branded_change_pct": -52.8,
+  "total_conversions_90d": 200,
+  "blended_conv_per_1k_visits_90d": 1.85,
+  "dated_urls_loss": -12510,
+  "dated_urls_share_pct": 35.0,
+  "cause_buckets": {
+    "A. Dated URL expired": {
+      "traffic_delta": -12510,
+      "share_of_sample_loss_pct": 35.0
+    },
+    "B. Head term": {
+      "traffic_delta": -16500,
+      "share_of_sample_loss_pct": 46.2
+    },
+    "C. Off-core, outranked by aggregators / thin": {
+      "traffic_delta": -3250,
+      "share_of_sample_loss_pct": 9.1
+    },
+    "D. Stale rules content": {
+      "traffic_delta": -2200,
+      "share_of_sample_loss_pct": 6.2
+    },
+    "E. SERP feature at stable rank": {
+      "traffic_delta": -800,
+      "share_of_sample_loss_pct": 2.2
+    },
+    "F. High-intent compare page slipping": {
+      "traffic_delta": -800,
+      "share_of_sample_loss_pct": 2.2
+    },
+    "G. Link asset drifting": {
+      "traffic_delta": -500,
+      "share_of_sample_loss_pct": 1.4
+    },
+    "H. Stable": {
+      "traffic_delta": -500,
+      "share_of_sample_loss_pct": 1.4
+    },
+    "I. Gainers": {
+      "traffic_delta": 1350,
+      "share_of_sample_loss_pct": -3.8
+    }
+  },
+  "correlations": {
+    "position_delta_vs_conversions_90d": {
+      "rho": -0.6,
+      "p": 0.009
+    },
+    "position_delta_vs_conv_per_1k": {
+      "rho": -0.63,
+      "p": 0.005
+    },
+    "referring_domains_vs_position_now": {
+      "rho": -0.77,
+      "p": 0.0
+    },
+    "referring_domains_vs_position_delta": {
+      "rho": -0.38,
+      "p": 0.125
+    },
+    "referring_domains_vs_conversions_90d": {
+      "rho": 0.61,
+      "p": 0.007
+    },
+    "referring_domains_vs_conv_per_1k": {
+      "rho": 0.4,
+      "p": 0.104
+    },
+    "position_now_vs_conversions_90d": {
+      "rho": -0.78,
+      "p": 0.0
+    },
+    "months_since_update_vs_position_delta": {
+      "rho": 0.83,
+      "p": 0.0
+    },
+    "months_since_update_vs_traffic_change_pct": {
+      "rho": -0.79,
+      "p": 0.0
+    },
+    "traffic_now_vs_conversions_90d": {
+      "rho": 0.69,
+      "p": 0.001
+    },
+    "referring_domains_vs_position_delta_excl_dated": {
+      "rho": -0.28,
+      "p": 0.289,
+      "n": 16
+    }
+  },
+  "groups": {
+    "pages_that_fell": {
+      "n": 13,
+      "conversions_90d": 119,
+      "traffic_now": 22140,
+      "median_months_since_update": 39
+    },
+    "pages_that_held_or_gained": {
+      "n": 5,
+      "conversions_90d": 81,
+      "traffic_now": 13950,
+      "median_months_since_update": 21
+    },
+    "compare_pages": {
+      "traffic_now": 2000,
+      "conversions_90d": 72
+    },
+    "top4_conversion_pages_share_pct": 77.5,
+    "zero_conversion_pages": [
+      "/blog/expense-management-guide",
+      "/blog/per-diem-rates-2022",
+      "/blog/what-is-an-invoice",
+      "/blog/bookkeeping-basics",
+      "/blog/accounting-software-list",
+      "/blog/quarterly-tax-deadlines-2023"
+    ],
+    "zero_conversion_pages_traffic_lost": -16460,
+    "pages_lost_more_than_rank_explains": [
+      [
+        "/blog/expense-management-guide",
+        -165
+      ],
+      [
+        "/blog/expense-report-template",
+        -200
+      ],
+      [
+        "/blog/per-diem-rates-2022",
+        -159
+      ],
+      [
+        "/blog/travel-expense-policy",
+        -1537
+      ],
+      [
+        "/blog/receipt-scanning-app",
+        -800
+      ]
+    ],
+    "pages_rank_overexplains": [
+      [
+        "/blog/what-is-expense-management",
+        3649
+      ],
+      [
+        "/blog/business-expense-categories",
+        2324
+      ],
+      [
+        "/blog/corporate-card-vs-credit-card",
+        700
+      ],
+      [
+        "/compare/vs-ramp",
+        582
+      ],
+      [
+        "/compare/vs-brex",
+        200
+      ],
+      [
+        "/blog/company-name-expense-software",
+        300
+      ],
+      [
+        "/blog/what-is-spend-management",
+        259
+      ],
+      [
+        "/blog/expense-fraud-statistics",
+        340
+      ]
+    ],
+    "high_rd_pages_that_still_fell": [
+      [
+        "/blog/what-is-expense-management",
+        84,
+        3
+      ],
+      [
+        "/blog/business-expense-categories",
+        52,
+        5
+      ],
+      [
+        "/blog/corporate-card-vs-credit-card",
+        61,
+        2
+      ],
+      [
+        "/blog/expense-fraud-statistics",
+        74,
+        3
+      ]
+    ],
+    "gainers_rd": [
+      [
+        "/blog/travel-expense-policy",
+        26,
+        -3
+      ],
+      [
+        "/blog/what-is-spend-management",
+        11,
+        -4
+      ]
+    ]
+  },
+  "topics": {
+    "Expense management core": {
+      "pages": 7,
+      "traffic_now": 20450,
+      "traffic_12mo_ago": 34200,
+      "conversions_90d": 42,
+      "referring_domains": 246,
+      "conv_per_1k_visits_90d": 0.68,
+      "traffic_change_pct": -40.2
+    },
+    "Corporate cards": {
+      "pages": 1,
+      "traffic_now": 4100,
+      "traffic_12mo_ago": 6800,
+      "conversions_90d": 31,
+      "referring_domains": 61,
+      "conv_per_1k_visits_90d": 2.52,
+      "traffic_change_pct": -39.7
+    },
+    "Rates and deadlines (compliance utility)": {
+      "pages": 3,
+      "traffic_now": 1090,
+      "traffic_12mo_ago": 15800,
+      "conversions_90d": 2,
+      "referring_domains": 49,
+      "conv_per_1k_visits_90d": 0.61,
+      "traffic_change_pct": -93.1
+    },
+    "Off-core finance education": {
+      "pages": 3,
+      "traffic_now": 3250,
+      "traffic_12mo_ago": 6700,
+      "conversions_90d": 0,
+      "referring_domains": 27,
+      "conv_per_1k_visits_90d": 0.0,
+      "traffic_change_pct": -51.5
+    },
+    "Comparisons and alternatives": {
+      "pages": 2,
+      "traffic_now": 2000,
+      "traffic_12mo_ago": 2900,
+      "conversions_90d": 72,
+      "referring_domains": 36,
+      "conv_per_1k_visits_90d": 12.0,
+      "traffic_change_pct": -31.0
+    },
+    "Branded": {
+      "pages": 1,
+      "traffic_now": 3900,
+      "traffic_12mo_ago": 3600,
+      "conversions_90d": 52,
+      "referring_domains": 45,
+      "conv_per_1k_visits_90d": 4.44,
+      "traffic_change_pct": 8.3
+    },
+    "Data and statistics (link assets)": {
+      "pages": 1,
+      "traffic_now": 1300,
+      "traffic_12mo_ago": 1800,
+      "conversions_90d": 1,
+      "referring_domains": 74,
+      "conv_per_1k_visits_90d": 0.26,
+      "traffic_change_pct": -27.8
+    }
+  },
+  "triage_counts": {
+    "Protect": 8,
+    "Refresh": 5,
+    "Consolidate": 3,
+    "Kill": 2
+  },
+  "assumptions": {
+    "now_for_staleness": "2026-07 (brief version date)",
+    "ctr_curve_pos_1_10": "FirstPageSage 2023 curve as cited by Backlinko (updated Apr 2025) [Benchmarked]",
+    "ctr_pos_11_plus": "assumed",
+    "conv_window": "conversions_90d divided by 3x monthly traffic [Estimated]"
+  }
+}
