@@ -257,19 +257,28 @@ const axisOpts = () => ({
 
 // ================================================================ 12. What to expect
 {
-  const s = contentSlide("What to expect", "By month 12: about twice the leads from search, and traffic back to roughly 117K. Not 140K, and here is why.",
-    { source: "Projection, not a forecast. Every assumption is listed in the working model and gets replaced with measured numbers at day 90." });
-  s.addChart(pres.ChartType.line, [{ name: "Monthly visits (projection)", labels: ["Today", "Month 3", "Month 6", "Month 9", "Month 12"], values: [85000, 92000, 105000, 113000, 117000] }], {
-    ...axisOpts(), x: 0.6, y: 2.0, w: 6.0, h: 3.5, chartColors: [ORANGE], lineSize: 2.5, lineDataSymbol: "circle", lineDataSymbolSize: 8, showValue: true, dataLabelFormatCode: "#,##0", dataLabelPosition: "t",
-    valAxisMinVal: 60000, valAxisMaxVal: 150000, valAxisLabelFormatCode: "#,##0", showTitle: true, title: "Monthly visits from Google (projection)", titleFontFace: FONT, titleFontSize: 12, titleColor: CHAR,
+  const s = contentSlide("What to expect", "By month 12: leads roughly double in the base case, and traffic lands between about 100K and 135K. 140K sits above our stretch case.",
+    { source: "Three scenarios, not a forecast. The base case assumes the top-page sample's mix holds for the whole site; week-one Search Console data replaces that assumption." });
+  const labels = ["Today", "Month 3", "Month 6", "Month 9", "Month 12"];
+  s.addChart(pres.ChartType.line, [
+    { name: "Stretch", labels, values: [85000, 95000, 112000, 126000, 136000] },
+    { name: "Base", labels, values: [85000, 92000, 105000, 113000, 117000] },
+    { name: "Low", labels, values: [85000, 88000, 93000, 98000, 101000] },
+  ], {
+    ...axisOpts(), x: 0.6, y: 2.0, w: 6.0, h: 3.5, chartColors: [GREY, ORANGE, GREY], lineSize: 2.5, lineDataSymbol: "circle", lineDataSymbolSize: 7, showLegend: true, legendPos: "b",
+    valAxisMinVal: 60000, valAxisMaxVal: 150000, valAxisLabelFormatCode: "#,##0", showTitle: true, title: "Monthly visits from Google (three scenarios)", titleFontFace: FONT, titleFontSize: 12, titleColor: CHAR,
   });
-  s.addChart(pres.ChartType.line, [{ name: "Qualified leads (today = 100)", labels: ["Today", "Month 3", "Month 6", "Month 9", "Month 12"], values: [100, 115, 150, 180, 220] }], {
-    ...axisOpts(), x: 6.8, y: 2.0, w: 5.9, h: 3.5, chartColors: [CHAR], lineSize: 2.5, lineDataSymbol: "circle", lineDataSymbolSize: 8, showValue: true, dataLabelFormatCode: "0", dataLabelPosition: "t",
-    valAxisMinVal: 0, valAxisMaxVal: 260, showTitle: true, title: "Qualified leads from search, indexed to today = 100 (projection)", titleFontFace: FONT, titleFontSize: 12, titleColor: CHAR,
+  s.addChart(pres.ChartType.line, [
+    { name: "Stretch", labels, values: [100, 125, 180, 245, 304] },
+    { name: "Base", labels, values: [100, 115, 150, 180, 220] },
+    { name: "Low", labels, values: [100, 108, 125, 140, 154] },
+  ], {
+    ...axisOpts(), x: 6.8, y: 2.0, w: 5.9, h: 3.5, chartColors: [GREY, CHAR, GREY], lineSize: 2.5, lineDataSymbol: "circle", lineDataSymbolSize: 7, showLegend: true, legendPos: "b",
+    valAxisMinVal: 0, valAxisMaxVal: 350, showTitle: true, title: "Qualified leads from search, today = 100 (three scenarios)", titleFontFace: FONT, titleFontSize: 12, titleColor: CHAR,
   });
-  s.addText("Why not 140K: your biggest searches now have an AI answer on top, and the two expired pages were queries that government sites now own. The old pages top out near 117K even if every refresh works. Anything above that comes from new comparison pages and templates. We would rather tell you this now than explain it in month 12.",
+  s.addText("Month 12, base case: about 117,000 visits and 2.2x leads. Low: 101,000 and 1.5x. Stretch: 136,000 and 3x. Why even the stretch case stays under 140K: your biggest searches now have an AI answer on top, and the two expired pages were queries that government sites now own. Growth beyond the base case comes from new comparison pages and templates, not from the old pages returning to their old numbers.",
     { x: 0.6, y: 5.55, w: 12.1, h: 0.6, fontFace: FONT, fontSize: 11, color: MID, margin: 0, valign: "top" });
-  takeaway(s, "The traffic line recovers. The leads line is the one we are accountable for, and it moves faster because the first fixes land on the pages that convert.", 6.25, 0.55);
+  takeaway(s, "The traffic line recovers in every case. The leads line is the one we are accountable for, and it moves faster because the first fixes land on the pages that convert.", 6.25, 0.55);
 }
 
 // ================================================================ 13. First 90 days

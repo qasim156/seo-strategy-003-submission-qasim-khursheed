@@ -69,7 +69,7 @@ lines = [
     ("5. Plan_90_Days: what happens each week, who owns it, what you can see at the end of it.", BLACK),
     ("6. Roadmap_12_Months: the four quarters and the five 90-day indicators with what we do if they do not move.", BLACK),
     ("7. Budget: the $15,000 a month split, and how many posts that buys.", BLACK),
-    ("8. Targets_Month_12: the month-12 traffic and conversion targets with every assumption in an editable cell.", BLACK),
+    ("8. Targets_Month_12: low, base and stretch month-12 targets for traffic and conversions, every assumption in an editable cell.", BLACK),
     ("Evidence sheets, for when you want to check a number: Data_To_Request (what we ask for in week one), Live_SERPs (who ranks today), Competitors (Ramp and Brex footprint and link pace), Ref_CTR_Curve (the click-through curve used in Page_Triage).", BLACK),
     ("", BLACK),
     ("Colors", BOLD),
@@ -286,7 +286,7 @@ road = [
      "250+ posts actioned. Organic conversions about +80%. Traffic 110K to 120K.", "[Estimated]"),
     ("Q4 (months 10 to 12)", "All 400 posts actioned. Yearly refresh calendar for rate and deadline pages. Yearly stat refresh on the fraud page. Holdout results and conversion lift reported.",
      "Sprint 4: reserve for whatever the data says (field vitals, schema, the next template).",
-     "Organic conversions about 2x baseline. Traffic 115K to 120K. 140K is not promised: the AI Overview on the head terms and the two expired URLs cap what the old pages can return; anything above comes from new clusters and templates.", "[Estimated]"),
+     "Base case: organic conversions about 2x baseline, traffic about 117K (low about 101K, stretch about 136K). 140K sits above the stretch case: the AI Overview on the head terms and the two expired URLs cap what the old pages can return; anything above comes from new clusters and templates.", "[Estimated]"),
 ]
 for i, (q, s_, e_, m, l) in enumerate(road, DR):
     put(wro, i, 1, q, BOLD, wrap=True); put(wro, i, 2, s_, wrap=True); put(wro, i, 3, e_, wrap=True); put(wro, i, 4, m, wrap=True); put(wro, i, 5, l); wro.row_dimensions[i].height = 130
@@ -331,40 +331,46 @@ put(wbud, c0 + 4, 1, "Posts actioned in 12 months"); put(wbud, c0 + 4, 2, f"=B{c
 put(wbud, c0 + 5, 1, "Ramp's publishing pace (brief): posts a year"); put(wbud, c0 + 5, 2, "=50*2"); put(wbud, c0 + 5, 3, "[Estimated]"); put(wbud, c0 + 5, 4, "50 posts in 6 months in the brief. We cannot match it on new posts (48 a year). Refreshes and consolidations are where our effort goes.", wrap=True)
 
 # ================================================================== Targets_Month_12
-wm = sheet("Targets_Month_12", "Month-12 targets: traffic and conversions", "a labeled projection, not a forecast. Every yellow cell is an assumption you can change and the targets update.", [62, 14, 14, 90])
-header(wm, HR, ["Assumption", "Value", "Label", "Where it comes from"])
+wm = sheet("Targets_Month_12", "Month-12 targets: three scenarios", "a labeled projection, not a forecast. Low, base and stretch cases side by side. Every yellow cell is an assumption you can change and the three results update.", [60, 11, 11, 11, 14, 80])
+note(wm, 3, "Caveat that applies to every row below: the head-term share of loss (46%) comes from an 18-page sample of the biggest pages, and the written answer says not to scale that sample to the site. This sheet does scale it, as a scenario input only, so the targets have a shape. Search Console data in week one replaces the scaled input with the real one.", cols=6, height=44)
+header(wm, HR, ["Assumption", "Low", "Base", "Stretch", "Label", "Where it comes from"])
 A = [
-    ("Where we start: organic traffic a month", 85000, "[Observed]", "Brief. Source not stated."),
-    ("Where we start: organic conversions a month (index)", 100, "[Assumed]", "Index = 100 so the VP can drop in the real GA4 or CRM number. The fixture shows 200 conversions in 90 days on 18 pages, about 67 a month, but that is a sample."),
-    ("Traffic the head-term pages lost across the site in 12 months", 25000, "[Estimated]", "Head terms (cause B) are 46% of the sample's loss. Site loss is 55,000 (140K to 85K). 46% of 55,000 is about 25,000."),
-    ("Share of that we can win back while an AI Overview sits above #1", 0.40, "[Estimated]", "Ahrefs, February 2026, 300,000 keywords: 58% lower click rate for the top result when an AI Overview appears. Winning back rank returns under half the old clicks."),
-    ("Traffic lift on a refreshed non-head page, 6 months after the refresh", 0.30, "[Assumed]", "Placeholder until the Q1 holdout gives a measured number. Replace at day 90."),
-    ("Share of non-head traffic on pages that get refreshed this year", 0.45, "[Estimated]", "96 refreshes plus consolidations against 400 posts, weighted to the top of the traffic curve."),
-    ("Share of today's traffic on the head-term pages", 0.25, "[Estimated]", "Blog is 70% of traffic; the head terms are its biggest pages. Replace with Search Console page data."),
-    ("Traffic won back by making the dated URLs evergreen (monthly, by month 12)", 4000, "[Estimated]", "Two URLs peaked at 12,900 combined. Government and IRS own both SERPs now, so assume a third comes back."),
-    ("Traffic from new content by month 12 (48 new posts plus the comparison hub)", 9000, "[Estimated]", "About 190 visits a post at month 12, in line with the spend management page's 650 at under a year old."),
-    ("Conversion lift from CTAs, the comparison hub and templates (multiplier on conversions per visit)", 1.6, "[Estimated]", "Comparison pages convert at 10 to 13 per 1,000 visits against a blended 1.85. Moving a tenth of visits to that path and fixing CTAs on the top 6 pages."),
+    ("Where we start: organic traffic a month", 85000, 85000, 85000, "[Observed]", "Brief. Source not stated."),
+    ("Where we start: organic conversions a month (index)", 100, 100, 100, "[Assumed]", "Index = 100 so the VP can drop in the real GA4 or CRM number. The fixture shows 200 conversions in 90 days on 18 pages, about 67 a month, but that is a sample."),
+    ("Traffic the head-term pages lost across the site in 12 months", 20000, 25000, 30000, "[Assumed]", "Scenario input. Base takes the sample's 46% head-term share of a 55,000 site loss (140K to 85K). Low and stretch bracket it. Replace with Search Console page data."),
+    ("Share of that we can win back while an AI Overview sits above #1", 0.25, 0.40, 0.55, "[Estimated]", "Ahrefs, February 2026, 300,000 keywords: 58% lower click rate for the top result when an AI Overview appears. Winning back rank returns under half the old clicks in the base case."),
+    ("Traffic lift on a refreshed non-head page, 6 months after the refresh", 0.15, 0.30, 0.45, "[Assumed]", "Placeholder until the Q1 holdout gives a measured number. Replace at day 90."),
+    ("Share of non-head traffic on pages that get refreshed this year", 0.40, 0.45, 0.50, "[Estimated]", "96 refreshes plus consolidations against 400 posts, weighted to the top of the traffic curve."),
+    ("Share of today's traffic on the head-term pages", 0.25, 0.25, 0.25, "[Estimated]", "Blog is 70% of traffic; the head terms are its biggest pages. Replace with Search Console page data."),
+    ("Traffic won back by making the dated URLs evergreen (monthly, by month 12)", 2000, 4000, 6000, "[Estimated]", "Two URLs peaked at 12,900 combined. Government and IRS own both SERPs now."),
+    ("Traffic from new content by month 12 (48 new posts plus the comparison hub)", 5000, 9000, 14000, "[Estimated]", "Base is about 190 visits a post at month 12, in line with the spend management page's 650 at under a year old."),
+    ("Conversion lift from CTAs, the comparison hub and templates (multiplier on conversions per visit)", 1.3, 1.6, 1.9, "[Estimated]", "Comparison pages convert at 10 to 13 per 1,000 visits against a blended 1.85. Base moves a tenth of visits to that path and fixes CTAs on the top 6 pages."),
 ]
-for i, (a, v, l, b) in enumerate(A, DR):
-    put(wm, i, 1, a, wrap=True); put(wm, i, 2, v, BLUE, "0.00" if isinstance(v, float) else "#,##0", YELLOW); put(wm, i, 3, l); put(wm, i, 4, b, wrap=True); wm.row_dimensions[i].height = 40
-a = {k: DR + i for i, k in enumerate(["start_traffic", "start_conv", "head_lost", "head_share_back", "refresh_lift", "refresh_share", "head_share_now", "dated_back", "new_content", "conv_mult"])}
+for i, (a, lo, ba, st, l, b) in enumerate(A, DR):
+    put(wm, i, 1, a, wrap=True)
+    for c, v in ((2, lo), (3, ba), (4, st)):
+        put(wm, i, c, v, BLUE, "0.00" if isinstance(v, float) else "#,##0", YELLOW)
+    put(wm, i, 5, l); put(wm, i, 6, b, wrap=True); wm.row_dimensions[i].height = 44
+k = {name: DR + i for i, name in enumerate(["start_traffic", "start_conv", "head_lost", "head_share_back", "refresh_lift", "refresh_share", "head_share_now", "dated_back", "new_content", "conv_mult"])}
 p0 = DR + len(A) + 1
 put(wm, p0, 1, "Month-12 projection", BOLD)
-lines_ = [
-    ("Today's traffic (untouched pages assumed flat)", f"=B{a['start_traffic']}", "[Observed]"),
-    ("Head-term traffic won back (lost x share we can win back)", f"=B{a['head_lost']}*B{a['head_share_back']}", "[Estimated]"),
-    ("Lift on the refreshed non-head pages", f"=B{a['start_traffic']}*(1-B{a['head_share_now']})*B{a['refresh_share']}*B{a['refresh_lift']}", "[Estimated]"),
-    ("Dated URLs made evergreen", f"=B{a['dated_back']}", "[Estimated]"),
-    ("New content", f"=B{a['new_content']}", "[Estimated]"),
-]
-for i, (l, f_, lab) in enumerate(lines_, p0 + 1):
-    put(wm, i, 1, l); put(wm, i, 2, f_, fmt="#,##0"); put(wm, i, 3, lab)
-pt = p0 + 1 + len(lines_)
-put(wm, pt, 1, "Projected organic traffic, month 12", BOLD); put(wm, pt, 2, f"=SUM(B{p0+1}:B{pt-1})", BOLD, "#,##0"); put(wm, pt, 3, "[Estimated]")
-put(wm, pt + 1, 1, "Target in the brief"); put(wm, pt + 1, 2, 140000, BLUE, "#,##0", YELLOW); put(wm, pt + 1, 3, "[Observed]")
-put(wm, pt + 2, 1, "Gap to 140K"); put(wm, pt + 2, 2, f"=B{pt+1}-B{pt}", fmt="#,##0;(#,##0);-")
-put(wm, pt + 3, 1, "Projected organic conversions, month 12 (index, start = 100)", BOLD); put(wm, pt + 3, 2, f"=B{a['start_conv']}*(B{pt}/B{a['start_traffic']})*B{a['conv_mult']}", BOLD, "0"); put(wm, pt + 3, 3, "[Estimated]")
-note(wm, pt + 5, "Reading: with these assumptions the site lands near 115K to 120K rather than 140K, because the head-term pages sit under an AI Overview and the two expired URLs are government-owned queries now. Conversions can roughly double because the conversion path (comparison hub, templates, CTAs) is where the upside is. The Q1 holdout replaces the assumed refresh lift with a measured one.", cols=4, height=64)
+header(wm, p0 + 1, ["", "Low", "Base", "Stretch", "Label", ""])
+def row(r, label, f, lab, fmt="#,##0", bold=False):
+    put(wm, r, 1, label, BOLD if bold else BLACK)
+    for c, col in ((2, "B"), (3, "C"), (4, "D")):
+        put(wm, r, c, f(col), BOLD if bold else BLACK, fmt)
+    put(wm, r, 5, lab)
+r0 = p0 + 2
+row(r0, "Today's traffic (untouched pages assumed flat)", lambda c: f"={c}{k['start_traffic']}", "[Observed]")
+row(r0 + 1, "Head-term traffic won back (lost x share we can win back)", lambda c: f"={c}{k['head_lost']}*{c}{k['head_share_back']}", "[Assumed]")
+row(r0 + 2, "Lift on the refreshed non-head pages", lambda c: f"={c}{k['start_traffic']}*(1-{c}{k['head_share_now']})*{c}{k['refresh_share']}*{c}{k['refresh_lift']}", "[Estimated]")
+row(r0 + 3, "Dated URLs made evergreen", lambda c: f"={c}{k['dated_back']}", "[Estimated]")
+row(r0 + 4, "New content", lambda c: f"={c}{k['new_content']}", "[Estimated]")
+row(r0 + 5, "Projected organic traffic, month 12", lambda c: f"=SUM({c}{r0}:{c}{r0+4})", "[Estimated]", bold=True)
+put(wm, r0 + 6, 1, "Target in the brief"); put(wm, r0 + 6, 3, 140000, BLUE, "#,##0", YELLOW); put(wm, r0 + 6, 5, "[Observed]")
+row(r0 + 7, "Gap to 140K", lambda c: f"=$C${r0+6}-{c}{r0+5}", "", fmt="#,##0;(#,##0);-")
+row(r0 + 8, "Projected organic conversions, month 12 (index, start = 100)", lambda c: f"={c}{k['start_conv']}*({c}{r0+5}/{c}{k['start_traffic']})*{c}{k['conv_mult']}", "[Estimated]", fmt="0", bold=True)
+note(wm, r0 + 10, "Reading: low about 101K, base about 117K, stretch about 136K. The brief's 140K sits above the stretch case, because the head-term pages sit under an AI Overview and the two expired URLs are government-owned queries now. Conversions land between about 1.5x and 3x, base about 2.2x, because the conversion path (comparison hub, templates, CTAs) is where the upside is. The base case is a scenario, not a promise: the Q1 holdout replaces the refresh lift, and week-one Search Console data replaces the scaled head-term loss.", cols=6, height=70)
 
 # ================================================================== Data_To_Request
 wdr = sheet("Data_To_Request", "What we ask for in week one", "the nine data pulls, who owns each, why it matters, and what changes in the plan if the data says something different.", [4, 46, 26, 18, 60, 60])

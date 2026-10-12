@@ -9,7 +9,7 @@ src, out = Path(sys.argv[1]), Path(sys.argv[2])
 body = markdown.markdown(src.read_text(), extensions=["tables", "fenced_code"])
 css = """
 @page { size: A4; margin: 12mm 14mm 12mm 14mm; }
-body { font-family: Arial, Helvetica, sans-serif; font-size: 10.2pt; line-height: 1.26; color: #111; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; line-height: 1.27; color: #111; }
 h1 { font-size: 15pt; margin: 0 0 4pt 0; }
 h2 { font-size: 11.5pt; margin: 9pt 0 3pt 0; border-bottom: 1px solid #999; padding-bottom: 1pt; page-break-after: avoid; }
 tr { page-break-inside: avoid; }
