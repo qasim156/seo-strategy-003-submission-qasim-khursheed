@@ -242,6 +242,17 @@ const axisOpts = () => ({
   takeaway(s, "Every one of the 400 posts gets one of four decisions: protect, refresh, merge or retire. About half get work; all of them get a decision.");
 }
 
+// ================================================================ 11. Option B
+{
+  const s = contentSlide("An alternative for producing the content", "Option B: draft in your voice with AI, check every piece with an editor, and spend the saving on links.", { source: "Costs are assumptions, marked as such in the budget sheet. Testable in Q2 against the same holdout." });
+  card(s, 0.6, 2.0, 5.9, 2.4, "Option A: three freelance writers", "4 new posts and 8 refreshes a month, written by freelancers from briefs. About $2,800 a month. Known quantity, slower, and every writer brings their own voice.", CHAR);
+  card(s, 6.8, 2.0, 5.9, 2.4, "Option B: your voice, drafted faster, edited by a person", "We interview your Content Manager and two subject experts on tone, style and how you talk to customers, and build a dedicated writing setup from that. It drafts from the same briefs. A freelance editor checks facts, sources, voice and the call to action on every piece before anything publishes. About $1,200 a month plus a one-off $1,500 setup.", ORANGE);
+  stat(s, 0.6, 4.6, 3.9, 1.35, "$1,600", "a month moves from writing to earning links", false);
+  stat(s, 4.7, 4.6, 3.9, 1.35, "12 to 20", "relevant link placements a month instead of 6 to 10", false);
+  stat(s, 8.8, 4.6, 3.9, 1.35, "Q2 test", "half the refreshes each way, measured against the holdout", true);
+  takeaway(s, "Nothing publishes without a person signing it off. The saving is real only if the edited pages perform as well as the written ones, so we test before we switch.");
+}
+
 // ================================================================ 11. Ramp
 {
   const s = contentSlide("The competition", "We will not out-publish Ramp. We win where they do not play.", { source: "Source: Ramp's publishing pace from your brief; linking sites gained per month from a public backlink index, 12 months to September 2026" });

@@ -330,6 +330,17 @@ put(wbud, c0 + 2, 1, "Refreshes"); put(wbud, c0 + 2, 2, "=8*12")
 put(wbud, c0 + 3, 1, "Consolidations and removals (SEO Specialist time, no freelancer cost)"); put(wbud, c0 + 3, 2, 80, BLUE, fill=YELLOW); put(wbud, c0 + 3, 3, "[Estimated]")
 put(wbud, c0 + 4, 1, "Posts actioned in 12 months"); put(wbud, c0 + 4, 2, f"=B{c0+1}+B{c0+2}+B{c0+3}")
 put(wbud, c0 + 5, 1, "Ramp's publishing pace (brief): posts a year"); put(wbud, c0 + 5, 2, "=50*2"); put(wbud, c0 + 5, 3, "[Estimated]"); put(wbud, c0 + 5, 4, "50 posts in 6 months in the brief. We cannot match it on new posts (48 a year). Refreshes and consolidations are where our effort goes.", wrap=True)
+o0 = c0 + 7
+put(wbud, o0, 1, "Option B: AI drafting in the client's voice, editor as the validation layer", BOLD)
+note(wbud, o0 + 1, "A dedicated Claude project with a voice skill built from interviews with the Content Manager and two subject experts (tone, style, how they talk to customers). Drafts come from Clearscope briefs; a freelance editor checks facts, sources, voice and CTA on every piece before it publishes. The saving moves to contextual link outreach. Testable in Q2: run it on half the refreshes and compare with freelancer-written pages against the holdout.", cols=4, height=58)
+header(wbud, o0 + 2, ["Line", "Monthly $", "Label", "Basis"])
+put(wbud, o0 + 3, 1, "Freelance model: content cost (new posts plus refreshes)"); put(wbud, o0 + 3, 2, f"=B{DR+1}+B{DR+2}", fmt="$#,##0"); put(wbud, o0 + 3, 3, "[Observed]"); put(wbud, o0 + 3, 4, "From the lines above.", wrap=True)
+put(wbud, o0 + 4, 1, "Option B: editor review, 12 pieces x $75"); put(wbud, o0 + 4, 2, "=12*75", BLUE, "$#,##0", YELLOW); put(wbud, o0 + 4, 3, "[Assumed]"); put(wbud, o0 + 4, 4, "Freelance editor, one pass per piece: facts, sources, voice, CTA.", wrap=True)
+put(wbud, o0 + 5, 1, "Option B: AI tooling"); put(wbud, o0 + 5, 2, 300, BLUE, "$#,##0", YELLOW); put(wbud, o0 + 5, 3, "[Assumed]"); put(wbud, o0 + 5, 4, "Claude subscription and the voice-skill project.", wrap=True)
+put(wbud, o0 + 6, 1, "Option B: monthly content cost", BOLD); put(wbud, o0 + 6, 2, f"=B{o0+4}+B{o0+5}", BOLD, "$#,##0")
+put(wbud, o0 + 7, 1, "Monthly saving moved to contextual link outreach", BOLD); put(wbud, o0 + 7, 2, f"=B{o0+3}-B{o0+6}", BOLD, "$#,##0")
+put(wbud, o0 + 8, 1, "Contextual link outreach under Option B"); put(wbud, o0 + 8, 2, f"=B{DR+4}+B{o0+7}", fmt="$#,##0"); put(wbud, o0 + 8, 3, "[Assumed]"); put(wbud, o0 + 8, 4, "12 to 20 qualified placements a month at this level.", wrap=True)
+put(wbud, o0 + 9, 1, "One-off setup: interviews and the voice skill"); put(wbud, o0 + 9, 2, 1500, BLUE, "$#,##0", YELLOW); put(wbud, o0 + 9, 3, "[Assumed]"); put(wbud, o0 + 9, 4, "Paid from the reserve in month one.", wrap=True)
 
 # ================================================================== Targets_Month_12
 wm = sheet("Targets_Month_12", "Month-12 targets: three scenarios", "a labeled projection, not a forecast. Low, base and stretch cases side by side. Every yellow cell is an assumption you can change and the three results update.", [60, 11, 11, 11, 14, 80])

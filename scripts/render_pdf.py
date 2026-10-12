@@ -8,7 +8,7 @@ from pypdf import PdfReader
 src, out = Path(sys.argv[1]), Path(sys.argv[2])
 body = markdown.markdown(src.read_text(), extensions=["tables", "fenced_code"])
 css = """
-@page { size: A4; margin: 12mm 14mm 12mm 14mm; }
+@page { size: A4; margin: 11mm 13mm 11mm 13mm; }
 body { font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; line-height: 1.27; color: #111; }
 h1 { font-size: 15pt; margin: 0 0 4pt 0; }
 h2 { font-size: 11.5pt; margin: 9pt 0 3pt 0; border-bottom: 1px solid #999; padding-bottom: 1pt; page-break-after: avoid; }
@@ -25,5 +25,5 @@ code { font-family: "DejaVu Sans Mono", Consolas, monospace; font-size: 8.9pt; }
 html = f"<!doctype html><html><head><meta charset='utf-8'><style>{css}</style></head><body>{body}</body></html>"
 tmp = out.with_suffix(".html"); tmp.write_text(html)
 subprocess.run(["wkhtmltopdf", "--quiet", "--enable-local-file-access", "--page-size", "A4",
-                "-T", "12mm", "-B", "12mm", "-L", "14mm", "-R", "14mm", str(tmp), str(out)], check=True)
+                "-T", "11mm", "-B", "11mm", "-L", "13mm", "-R", "13mm", str(tmp), str(out)], check=True)
 print("pages:", len(PdfReader(str(out)).pages))
