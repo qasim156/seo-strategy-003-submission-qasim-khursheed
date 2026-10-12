@@ -234,7 +234,7 @@ const axisOpts = () => ({
   card(s, 0.6, y, cw, h, "1. Fix the pages that make money", "Rebuild the \"vs Ramp\" comparison with a proper side-by-side table and a clear next step. Bring the \"vs Brex\" page to the same standard. Point your strongest pages at them.");
   card(s, 0.6 + (cw + gap), y, cw, h, "2. Refresh what is old", "Rewrite the big guides for 2026 with the current rules and a short, quotable answer at the top so Google's AI answer can cite you. Then work through the rest of the 400 posts, oldest and most valuable first.", CHAR);
   card(s, 0.6 + 2 * (cw + gap), y, cw, h, "3. Retire what is dead", "Redirect the two expired dated pages to permanent versions. Remove the off-topic pages. Merge the two pages competing for the same search into one.", CHAR);
-  card(s, 0.6 + 3 * (cw + gap), y, cw, h, "4. Earn links to what sells", "No paid links. One original data report a quarter from your anonymized spend data, templates and tools people link to naturally, and your strongest pages linking to the comparison pages.", CHAR);
+  card(s, 0.6 + 3 * (cw + gap), y, cw, h, "4. Earn links to what sells", "No paid links, no link networks. Editorial links from sites in your industry (finance, accounting, business software) pointing at the refreshed guides; one original data report a quarter; and assets people link to on their own: templates, calculators, a statistics page.", CHAR);
   s.addText([
     { text: "What ships in the first 30 days", options: { bold: true, color: CHAR, breakLine: true, fontSize: 13 } },
     { text: "The \"vs Ramp\" rebuild, the biggest guide refreshed, the two expired pages redirected, the two off-topic pages removed, the duplicate merged, and the measurement set up so every later change can be proven.", options: {} },

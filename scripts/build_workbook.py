@@ -263,7 +263,7 @@ plan = [
     ("4", "Holdout chosen: 20 pages to refresh in weeks 5 to 12 and 20 similar pages left alone; the matching rule written down", "SEO Specialist", "Holdout list with the matching rule (similar traffic, position and age)", "Full 400-post export"),
     ("5-8", "P2 refreshes: business expense categories (plus downloadable sheet), mileage guide, corporate card light update and CTA, template page download-to-signup test; 4 new posts in the spend management cluster", "Content Manager, freelancers", "8 refreshes and 4 new posts live; CTA test running", "Sprint 1 for the download flow (or a plugin fallback)"),
     ("6-10", "Sprint 1 ships: blog template speed, redirect map deployed, related-posts and in-content link module", "Engineering, WordPress contractor", "PageSpeed lab LCP under 2.5s on the blog template; redirects returning 301; link module live", "Engineering sprint slot"),
-    ("9-12", "P3 refreshes (receipt scanning for citation, fraud statistics yearly update); internal links from the two strongest blog pages into the comparison hub; data study #1 scoped with product and legal", "Content Manager, SEO Specialist", "8 more refreshes live; internal link map; data study brief", "Legal sign-off on anonymized spend data"),
+    ("9-12", "P3 refreshes (receipt scanning for citation, fraud statistics yearly update); internal links from the two strongest blog pages into the comparison hub; first batch of relevant-domain outreach aimed at the refreshed guides; data study #1 scoped with product and legal", "Content Manager, SEO Specialist", "8 more refreshes live; internal link map; outreach list with relevance notes; data study brief", "Legal sign-off on anonymized spend data"),
     ("12-13", "90-day review: the five indicators in Roadmap_12_Months against their targets; continue, pivot or re-diagnose using the pre-agreed rules", "Head of SEO, VP Marketing", "90-day note with the indicator table and the decision", "8 weeks of indexed refresh data"),
 ]
 for i, (w, s_, o, out, dep) in enumerate(plan, DR):
@@ -278,7 +278,7 @@ road = [
     ("Q1 (days 1 to 90)", "KPI reset with the VP; GA4 and CRM baseline by landing page; Search Console trend on the update calendar; link audit; P1 then P2 pages; 4 new posts a month in the spend management cluster; refresh holdout (20 refreshed vs 20 left alone).",
      "Sprint 1: blog template speed (hero image, fonts, lazy loading, caching), redirect map, related-posts and in-content link module. Cut: INP work, redesign, any framework change.",
      "vs-ramp back in the top 8. what-is-expense-management top 3. Refreshed pages beating the holdout on impressions within 8 weeks. Comparison page conversion rate up 25%. Blog LCP under 2.5s in lab. 24 refreshes, 3 consolidations, 2 removals live.", "[Estimated]"),
-    ("Q2 (months 4 to 6)", "Rules run on all 400 posts. 8 refreshes a month, consolidations by cluster. Data study #1 with outreach. Comparison hub: vs-ramp, vs-brex, 2 new comparison pages, 1 alternatives page. Template library with download-to-signup.",
+    ("Q2 (months 4 to 6)", "Rules run on all 400 posts. 8 refreshes a month, consolidations by cluster. Data study #1 with outreach. Contextual link placements from relevant domains running at 6 to 10 a month, aimed at the refreshed guides. Comparison hub: vs-ramp, vs-brex, 2 new comparison pages, 1 alternatives page. Template library with download-to-signup.",
      "Sprint 2: comparison page template (tables, schema, CTA components), template download flow, sitemap and removal handling.",
      "100+ posts actioned. Organic conversions +40% to +60% on the Q1 baseline. Traffic 100K to 110K.", "[Estimated]"),
     ("Q3 (months 7 to 9)", "Refresh pipeline at full pace. Data study #2. First hire decision (content strategist or editor) once the 6-month freeze ends, only if refresh throughput is the bottleneck. Spend management cluster complete.",
@@ -310,7 +310,8 @@ budget = [
     ("Tools (Ahrefs, Clearscope, rank tracking)", 1000, "[Assumed]", "Existing tool stack per the brief. Prices change, so confirm against invoices."),
     ("New posts: 4 a month x $300", "=4*300", "[Observed]", "Brief: 4 posts a month minimum, 3 freelancers at $300 a post."),
     ("Refreshes: 8 a month x $200", "=8*200", "[Assumed]", "A refresh at two-thirds of a new post. Confirm with the freelancers; a heavy rewrite is a $300 job."),
-    ("Digital PR and data study (freelancer retainer)", 4000, "[Assumed]", "One original data asset a quarter from anonymized, aggregated product data plus outreach. No paid links at any price."),
+    ("Digital PR and data study (freelancer retainer)", 2500, "[Assumed]", "One original data asset a quarter from anonymized, aggregated product data, pitched to finance and business press. No paid links at any price."),
+    ("Contextual link outreach to relevant domains", 1500, "[Assumed]", "Editorial placements on finance, accounting, B2B software and business operations sites, pointing at the refreshed guides and comparison pages. Target 6 to 10 a month. No networks, no directories, no paid placements."),
     ("WordPress speed and template contractor", 2500, "[Assumed]", "Front-loaded in Q1 (speed, image pipeline, caching, related-posts module). Drops to maintenance by Q3; the saving moves to refreshes."),
     ("CRO and design for the comparison pages", 1500, "[Assumed]", "Comparison tables, CTAs, template downloads. Mainly Q1 and Q2."),
     ("Automation and AI tooling, misc", 700, "[Assumed]", "Triage sheet automation, rank alerts, brief generation."),

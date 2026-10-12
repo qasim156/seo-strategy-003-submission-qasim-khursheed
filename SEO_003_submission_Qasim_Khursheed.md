@@ -3,7 +3,7 @@
 **Qasim Khursheed** · **Brief version:** 2026-07 · **Date:** 12 October 2026 · **Fixture SHA-256:** `fa691abc31b14093230657d17674ab0120449c54d20cef54bfe73686fe9b99c6`
 **Workbook:** `SEO_003_audit_and_refresh_model.xlsx`, start on the Start_Here sheet. **Labels:** [Observed] fixture, brief or live tool pull · [Estimated] my estimate · [Benchmarked] named source · [Assumed] placeholder. A label at the start of a paragraph covers every number in it unless a number carries its own.
 
-**The short version.** Traffic fell because the pages that used to rank have not been updated in two to five years, the competitors above them have, and an AI Overview now sits on top of the big head terms. A third of the sample's lost traffic was two dated URLs that expired. The data points to page age and a changed results page rather than links or a penalty; the week-one link audit confirms or overturns that before the budget is spent. The plan: agree a conversion KPI with the VP, fix the seven highest-value pages in 30 days, run all 400 posts through one rule set, and build links only to pages that make money. [Estimated] Month 12 base case: about 117K visits and roughly double the organic conversions, inside a low-to-stretch range of 101K to 136K. 140K sits above the stretch case. Section 8 says why.
+**The short version.** Traffic fell because the pages that used to rank have not been updated in two to five years, the competitors above them have, and an AI Overview now sits on top of the big head terms. A third of the sample's lost traffic was two dated URLs that expired. The data points to page age and a changed results page rather than links or a penalty; the week-one link audit confirms or overturns that before the budget is spent. The plan: agree a conversion KPI with the VP, fix the seven highest-value pages in 30 days, run all 400 posts through one rule set, and earn relevant links to the pages that make money. [Estimated] Month 12 base case: about 117K visits and roughly double the organic conversions, inside a low-to-stretch range of 101K to 136K. 140K sits above the stretch case. Section 8 says why.
 
 Map to the brief: diagnosis and competitive response are sections 1 to 4, content and technical 5 to 7, roadmap 8.
 
@@ -111,19 +111,26 @@ Sprint 1: blog template speed (hero image, fonts, lazy loading, caching), the re
 
 ### 7. Links on $15K a month
 
-No paid links at any price; they are the one thing in this plan that could trigger the spam-update case in section 2. [Assumed] $4,000 a month goes to a digital PR freelancer and one data study a quarter from anonymized, aggregated product spend data. Reclaim what we have: unlinked brand mentions, broken links to the dated URLs, and redirects so the [Observed] 22 and 9 referring domains on the expired pages pass to the evergreen ones. Templates and tools earn links without outreach; the finance team's quotes go out through journalist request platforms. Internal links are the cheapest links we have, so the two strongest blog pages point into the comparison hub. Links go to pages that convert or hold the head terms, never to volume.
+No paid links, no link networks, no directories; they are the one thing in this plan that could trigger the spam-update case in section 2. Every link we pursue passes three tests: the site is in our industry or next to it (finance, accounting, B2B software, business operations), it has real readers, and the link sits in the body of a relevant article. Four sources:
+
+- **Contextual links to the blog guides from relevant domains.** [Assumed] $1,500 a month on outreach to accounting and finance publications, SaaS partners and integration pages, industry newsletters and expert roundups, each placement pointing at a refreshed guide or a comparison page with a natural anchor. Target 6 to 10 placements a month.
+- **Assets on our site that earn links on their own.** The templates and tools (expense policy, categories sheet, report template, mileage calculator), a yearly refreshed statistics page ([Observed] the fraud page already has 74 referring domains) and a benchmarks report. These give outreach something worth linking to and keep earning after the campaign ends.
+- **Digital PR.** [Assumed] $2,500 a month for one original data study a quarter from anonymized, aggregated product spend data, pitched to finance and business press.
+- **Reclaim and redistribute.** Unlinked brand mentions, broken links to the dated URLs, redirects so the [Observed] 22 and 9 referring domains on the expired pages pass to the evergreen ones, and internal links from the two strongest blog pages into the comparison hub.
+
+Links go to the pages that convert or hold the head terms, never to volume.
 
 Data: Competitors sheet, `SEO_003_audit_and_refresh_model.xlsx`; referring domain counts in `evidence/triage_table.csv`.
 
 ### 8. The 12-month plan, budget and targets
 
-**Budget and team.** [Assumed] unless marked: tools $1,000; 4 new posts $1,200 [Observed]; 8 refreshes $1,600; digital PR $4,000; WordPress speed contractor $2,500 (front-loaded, drops by Q3); CRO and design $1,500; automation $700; reserve $2,500; total $15,000. The SEO Specialist owns the triage sheet, Search Console monitoring, internal linking and sprint tickets. The Content Manager owns refresh briefs, freelancer QA, CTAs and templates. Three freelancers carry 4 new posts and 8 refreshes a month. No hire for six months; at month seven, a content strategist or editor only if refresh throughput is the bottleneck.
+**Budget and team.** [Assumed] unless marked: tools $1,000; 4 new posts $1,200 [Observed]; 8 refreshes $1,600; digital PR $2,500; contextual link outreach $1,500; WordPress speed contractor $2,500 (front-loaded, drops by Q3); CRO and design $1,500; automation $700; reserve $2,500; total $15,000. The SEO Specialist owns the triage sheet, Search Console monitoring, internal linking and sprint tickets. The Content Manager owns refresh briefs, freelancer QA, CTAs and templates. Three freelancers carry 4 new posts and 8 refreshes a month. No hire for six months; at month seven, a content strategist or editor only if refresh throughput is the bottleneck.
 
 | When | What ships | Sprint | Target [Estimated] |
 |---|---|---|---|
 | Days 1 to 30 | KPI agreed and baselined; Search Console trend on the update calendar; link audit; all P1 pages live; holdout set ([Assumed] 20 refreshed vs 20 untouched) | Sprint 1 scoped | Redirects and removals live; Ramp comparison rebuilt |
 | Days 31 to 90 | P2 pages; 4 new posts a month in the spend management cluster; first data study scoped | Sprint 1 ships | The 90-day targets below |
-| Q2 | Rules run on all 400; data study #1; comparison hub (two more comparisons, one alternatives page); template library | Sprint 2 | 100+ posts actioned; conversions +40% to +60% on the Q1 baseline; traffic 100K to 110K |
+| Q2 | Rules run on all 400; data study #1; contextual link placements running; comparison hub (two more comparisons, one alternatives page); template library | Sprint 2 | 100+ posts actioned; conversions +40% to +60% on the Q1 baseline; traffic 100K to 110K |
 | Q3 | Refresh pipeline at full pace; data study #2; hiring decision | Sprint 3 | 250+ posts actioned; conversions about +80%; traffic 110K to 120K |
 | Q4 | All 400 actioned; yearly refresh calendar; holdout results reported | Sprint 4 (reserve) | Base case: conversions about 2x, traffic about 117K (low 101K, stretch 136K) |
 
