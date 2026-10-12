@@ -9,6 +9,7 @@ Qasim Khursheed, October 2026.
 2. **`SEO_003_audit_and_refresh_model.xlsx`** is the operating artifact. Open the Start_Here sheet first; it gives the reading order and what the colors mean.
 3. **`evidence/`** holds the fixture, the analysis outputs and the live data pulls referenced in the evidence log.
 4. **`scripts/`** reproduces every fixture number and rebuilds the workbook.
+5. **`deck/`** is the client-facing version: a 15-slide deck that explains the diagnosis and pitches the lead-based KPI in plain language (PDF and PPTX, with the build script).
 
 ## Fixture
 
@@ -27,6 +28,9 @@ Qasim Khursheed, October 2026.
 | `scripts/analyze_fixture.py` | Reads the fixture, writes the two outputs above |
 | `scripts/build_workbook.py` | Builds the workbook from the outputs |
 | `scripts/render_pdf.py` | Renders the Markdown to the PDF |
+| `deck/SEO_recovery_plan_client_deck.pdf` | Client-facing deck, 15 slides, one insight per slide |
+| `deck/SEO_recovery_plan_client_deck.pptx` | Editable version of the deck |
+| `deck/build_deck.js` | Builds the deck with pptxgenjs (`node build_deck.js out.pptx`) |
 
 ## Reproduce
 
