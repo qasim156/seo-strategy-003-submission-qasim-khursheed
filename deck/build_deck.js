@@ -140,7 +140,7 @@ const axisOpts = () => ({
 
 // ================================================================ 6. Not a penalty, not links
 {
-  const s = contentSlide("What it is not", "This is not a Google penalty and not a shortage of links. Your best-linked pages fell too.",
+  const s = contentSlide("What it is probably not", "The data points to page age, not to links or a penalty. We confirm that in week one, before spending on either.",
     { source: "Source: sites linking to each page (referring domains) and ranking change, your 18 biggest pages" });
   s.addChart(pres.ChartType.bar, [
     { name: "Pages that fell", labels: ["Expense mgmt guide", "Fraud statistics", "Corporate card guide", "Expense categories", "Travel policy", "Spend mgmt guide"], values: [84, 74, 61, 52, 0, 0] },
@@ -150,15 +150,15 @@ const axisOpts = () => ({
     valAxisMinVal: 0, valAxisMaxVal: 100, valAxisHidden: true, valGridLine: { style: "none" }, showLegend: true, legendPos: "t", showTitle: true, title: "Number of websites linking to the page", titleFontFace: FONT, titleFontSize: 12, titleColor: CHAR, catAxisLabelFontSize: 10,
   });
   s.addText([
-    { text: "Three signs this is not a penalty", options: { bold: true, color: CHAR, breakLine: true, fontSize: 14 } },
+    { text: "Three signs it is page age, not links", options: { bold: true, color: CHAR, breakLine: true, fontSize: 14 } },
     { text: " ", options: { breakLine: true, fontSize: 6 } },
     { text: "5 of your 18 top pages, on the same site and template, held or grew. A penalty drags everything down.", options: { bullet: true, breakLine: true } },
-    { text: "The four pages with the most links all fell. The two that grew have far fewer. Links did not decide this.", options: { bullet: true, breakLine: true } },
-    { text: "The drops match page age, not link counts.", options: { bullet: true, breakLine: true } },
+    { text: "Your best-linked pages fell the least, 2 to 5 places. The pages that fell 17 to 38 places have the fewest links.", options: { bullet: true, breakLine: true } },
+    { text: "Once page age is taken into account, link counts explain none of the drop.", options: { bullet: true, breakLine: true } },
     { text: " ", options: { breakLine: true, fontSize: 6 } },
-    { text: "We will still run a full check of your link profile in week one. If anything looks manufactured, we deal with it first. We do not expect to find it.", options: { color: MID } },
+    { text: "What this data cannot see: whether any of your links are poor quality, whether links were lost this year, or whether competitors simply out-built you. The week-one link check covers all three. If it finds a problem, the order flips: links first, rewriting second.", options: { color: MID } },
   ], { x: 8.5, y: 2.1, w: 4.2, h: 3.9, fontFace: FONT, fontSize: 11.5, color: INK, margin: 0, valign: "top", paraSpaceAfter: 4 });
-  takeaway(s, "Buying or chasing links would be money spent on the wrong problem. The fix is the content and the pages themselves.");
+  takeaway(s, "The first month looks the same either way: fix the comparison page, redirect the expired pages, run the link check. Its result decides the next five months.");
 }
 
 // ================================================================ 7. The traffic that left was not the traffic that paid

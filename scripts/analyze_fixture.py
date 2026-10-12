@@ -12,7 +12,8 @@ Usage: python3 -I analyze_fixture.py <path-to-fixture.csv> <output-dir>
 """
 import csv, json, sys, hashlib
 from pathlib import Path
-from scipy.stats import spearmanr
+from scipy.stats import spearmanr, rankdata
+import numpy as np
 
 FIXTURE = Path(sys.argv[1])
 OUT = Path(sys.argv[2])
@@ -192,6 +193,14 @@ corr = {
     "traffic_now_vs_conversions_90d": sp("traffic_now_monthly", "conversions_90d"),
     "referring_domains_vs_position_delta_excl_dated": sp_rows([r for r in rows if not r["is_dated_url"]], "referring_domains", "position_delta"),
 }
+def partial_rank(a, b, c):
+    """Spearman-style partial correlation of a and b with c held constant (ranks, then residuals)."""
+    ra, rb, rc = (rankdata([r[k] for r in rows]) for k in (a, b, c))
+    X = np.vstack([rc, np.ones(len(rc))]).T
+    res = lambda v: v - X @ np.linalg.lstsq(X, v, rcond=None)[0]
+    return round(float(np.corrcoef(res(ra), res(rb))[0, 1]), 2)
+corr["months_since_update_vs_position_delta_controlling_for_rd"] = partial_rank("months_since_update", "position_delta", "referring_domains")
+corr["referring_domains_vs_position_delta_controlling_for_age"] = partial_rank("referring_domains", "position_delta", "months_since_update")
 
 # ---- Groupings the VP will ask about ----
 fell = [r for r in rows if r["position_delta"] > 0]

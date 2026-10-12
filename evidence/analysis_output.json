@@ -96,7 +96,9 @@
       "rho": -0.28,
       "p": 0.289,
       "n": 16
-    }
+    },
+    "months_since_update_vs_position_delta_controlling_for_rd": 0.8,
+    "referring_domains_vs_position_delta_controlling_for_age": -0.07
   },
   "groups": {
     "pages_that_fell": {
